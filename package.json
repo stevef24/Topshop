@@ -11,6 +11,7 @@
   "dependencies": {
     "@relume_io/relume-tailwind": "^0.0.10",
     "@relume_io/relume-ui": "^0.0.19",
+    "build": "^0.1.4",
     "framer-motion": "^11.1.7",
     "next": "14.2.2",
     "react": "^18",

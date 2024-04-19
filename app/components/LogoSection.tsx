@@ -18,7 +18,7 @@ type Props = {
 export type Logo3Props = React.ComponentPropsWithoutRef<"section"> & Props;
 
 export const Logo3 = (props: Logo3Props) => {
-	const { heading, images } = {
+	const { heading } = {
 		...props,
 	} as Props;
 	return (
@@ -54,28 +54,32 @@ export const images = [
 		alt: "dhl logo ",
 	},
 	{
-		component: <Image src={dpd} alt={"dhl-logo"} width={100} height={100} />,
-		alt: "Relume logo ",
-	},
-	{
-		component: <Image src={ebay} alt={"dhl-logo"} width={100} height={100} />,
+		component: <Image src={dpd} alt={"dpd-logo"} width={100} height={100} />,
 		alt: "dpd logo ",
 	},
 	{
-		component: <Image src={fedex} alt={"dhl-logo"} width={100} height={100} />,
+		component: <Image src={ebay} alt={"ebay-logo"} width={100} height={100} />,
+		alt: "ebay logo ",
+	},
+	{
+		component: (
+			<Image src={fedex} alt={"fedex-logo"} width={100} height={100} />
+		),
 		alt: "fedex logo ",
 	},
 	{
-		component: <Image src={amazon} alt={"dhl-logo"} width={100} height={100} />,
+		component: (
+			<Image src={amazon} alt={"amazon-logo"} width={100} height={100} />
+		),
 		alt: "amazon logo ",
 	},
 	{
-		component: <Image src={ups} alt={"dhl-logo"} width={100} height={100} />,
+		component: <Image src={ups} alt={"ups-logo"} width={100} height={100} />,
 		alt: "royal mail logo ",
 	},
 	{
 		component: (
-			<Image src={royalMail} alt={"dhl-logo"} width={100} height={100} />
+			<Image src={royalMail} alt={"royalMail-logo"} width={100} height={100} />
 		),
 		alt: "ups logo ",
 	},

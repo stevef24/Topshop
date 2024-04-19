@@ -18,7 +18,6 @@ type MenuLinkProps = LinkProps & {
 };
 
 type Props = {
-	logo: ImageProps;
 	links: MenuLinkProps[];
 	buttons: ButtonProps[];
 };

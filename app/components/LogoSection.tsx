@@ -8,8 +8,8 @@ import fedex from "/public/fedex-express-6.svg";
 import amazon from "/public/logo-amazon.svg";
 import royalMail from "/public/royal-mail-2.svg";
 import ups from "/public/ups-logo-1.svg";
-
 import Image from "next/image";
+
 type Props = {
 	heading: string;
 	images: ImageProps[];
@@ -18,7 +18,7 @@ type Props = {
 export type Logo3Props = React.ComponentPropsWithoutRef<"section"> & Props;
 
 export const Logo3 = (props: Logo3Props) => {
-	const { heading } = {
+	const { heading, images } = {
 		...props,
 	} as Props;
 	return (
@@ -37,9 +37,14 @@ export const Logo3 = (props: Logo3Props) => {
 							className="flex shrink-0 animate-loop-horizontally items-center"
 						>
 							{images.map((logo, index) => (
-								<div className="mx-12" key={`${logo.alt} + ${index}`}>
-									{logo.component}
-								</div>
+								<Image
+									className="mx-12"
+									key={`${logo.alt} + ${index}`}
+									src={logo.src}
+									alt={`${logo.alt}`}
+									width={100}
+									height={100}
+								/>
 							))}
 						</div>
 					))}
@@ -48,39 +53,33 @@ export const Logo3 = (props: Logo3Props) => {
 	);
 };
 
-export const images = [
+export const imagesList = [
 	{
-		component: <Image src={dhl} alt={"dhl-logo"} width={100} height={100} />,
-		alt: "dhl logo ",
+		src: "/dhl-1.svg",
+		alt: "dhl logo",
 	},
 	{
-		component: <Image src={dpd} alt={"dpd-logo"} width={100} height={100} />,
-		alt: "dpd logo ",
+		src: "/dpd-logo-2015-.svg",
+		alt: "dpd logo",
 	},
 	{
-		component: <Image src={ebay} alt={"ebay-logo"} width={100} height={100} />,
-		alt: "ebay logo ",
+		src: "/ebay.svg",
+		alt: "ebay logo",
 	},
 	{
-		component: (
-			<Image src={fedex} alt={"fedex-logo"} width={100} height={100} />
-		),
-		alt: "fedex logo ",
+		src: "/fedex-express-6.svg",
+		alt: "fedex logo",
 	},
 	{
-		component: (
-			<Image src={amazon} alt={"amazon-logo"} width={100} height={100} />
-		),
-		alt: "amazon logo ",
+		src: "/logo-amazon.svg",
+		alt: "amazon logo",
 	},
 	{
-		component: <Image src={ups} alt={"ups-logo"} width={100} height={100} />,
-		alt: "royal mail logo ",
+		src: "/ups-logo-1.svg",
+		alt: "royal mail logo",
 	},
 	{
-		component: (
-			<Image src={royalMail} alt={"royalMail-logo"} width={100} height={100} />
-		),
-		alt: "ups logo ",
+		src: "/royal-mail-2.svg",
+		alt: "ups logo",
 	},
 ];

@@ -7,7 +7,7 @@ import { Testimonial17 } from "./components/Testimonials";
 import About from "./components/About";
 import { Footer7 } from "./components/Footer";
 import { Contact1 } from "./components/Contact";
-import { images } from "./components/LogoSection";
+import { imagesList } from "./components/LogoSection";
 import Logo from "./components/Logo";
 import Products from "./components/Products";
 
@@ -21,10 +21,6 @@ export default function Home() {
 					{ title: "Reviews", url: "#reviews" },
 				]}
 				buttons={[{ title: "Contact", size: "sm" }]}
-				logo={{
-					component: <Logo />,
-					alt: "TopShop logo",
-				}}
 			/>
 			<Header1
 				heading={"Welcome to Top-Shop Convenience"}
@@ -33,23 +29,13 @@ export default function Home() {
 				}
 				buttons={[{ title: "explore", variant: "primary" }]}
 				image={{
-					component: (
-						<Image
-							src={
-								"https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-							}
-							className="w-full object-cover rounded-3xl"
-							alt={"shop image"}
-							width={500}
-							height={500}
-						/>
-					),
+					src: "https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 					alt: undefined,
 				}}
 			/>
-			<Logo3 heading={"Parcel Services"} images={images} />
-			<Products />
+			<Logo3 heading={"Parcel Services"} images={imagesList} />
 			<OpeningTimes />
+			<Products />
 			<Testimonial17
 				heading={"What our customers think"}
 				description={"Read what our customers have to say about us."}
@@ -92,7 +78,7 @@ export default function Home() {
 			/>
 			<Footer7
 				image={{
-					component: <Logo />,
+					src: "/public/logo.svg",
 					alt: undefined,
 				}}
 				columnLinks={[]}

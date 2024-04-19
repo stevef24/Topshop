@@ -41,7 +41,15 @@ export const Header1 = (props: Header1Props) => {
 							))}
 						</div>
 					</div>
-					<div>{image.component}</div>
+					<div>
+						<Image
+							src={image.src}
+							alt={"open"}
+							width={500}
+							height={500}
+							className="rounded-3xl"
+						/>
+					</div>
 				</div>
 			</div>
 		</header>

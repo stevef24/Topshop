@@ -1,6 +1,5 @@
-import img from "/public/next.svg";
 import { Navbar2 } from "./components/Navbar";
-
+import Image from "next/image";
 import { Header1 } from "./components/Header";
 import { Logo3 } from "./components/LogoSection";
 import OpeningTimes from "./components/OpeningTimes";
@@ -34,7 +33,17 @@ export default function Home() {
 				}
 				buttons={[{ title: "explore", variant: "primary" }]}
 				image={{
-					component: undefined,
+					component: (
+						<Image
+							src={
+								"https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+							}
+							className="w-full object-cover rounded-3xl"
+							alt={"shop image"}
+							width={500}
+							height={500}
+						/>
+					),
 					alt: undefined,
 				}}
 			/>
@@ -48,10 +57,7 @@ export default function Home() {
 					{
 						testimonial:
 							"really nice people, whenever we go there they always talk to you and are the best corner shop in my area :)",
-						avatar: {
-							component: undefined,
-							alt: "Testimonial avatar",
-						},
+
 						name: "Emily S.",
 						position: "Customer",
 						companyName: "Top-Shop Convenience",
@@ -60,10 +66,7 @@ export default function Home() {
 					{
 						testimonial:
 							"Really helpful chap sorted my paypoint cash out voucher when 6 other stores wouldnt he's got my business in future thankyou",
-						avatar: {
-							component: undefined,
-							alt: "Testimonial avatar",
-						},
+
 						name: "Greg C.",
 						position: "Customer",
 						companyName: "Top-Shop Convenience",
@@ -72,10 +75,7 @@ export default function Home() {
 					{
 						testimonial:
 							"Friendly family run shop. Friendly & efficient. Always happy to help.",
-						avatar: {
-							component: undefined,
-							alt: "Testimonial avatar",
-						},
+
 						name: "Ani M",
 						position: "Customer",
 						companyName: "Top-Shop Convenience",

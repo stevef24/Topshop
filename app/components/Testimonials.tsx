@@ -6,7 +6,6 @@ import Image from "next/image";
 
 type Testimonial = {
 	testimonial: string;
-	avatar: ImageProps;
 	name: string;
 	position: string;
 	companyName: string;

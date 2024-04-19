@@ -41,17 +41,7 @@ export const Header1 = (props: Header1Props) => {
 							))}
 						</div>
 					</div>
-					<div>
-						<Image
-							src={
-								"https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=2304&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-							}
-							className="w-full object-cover rounded-3xl"
-							alt={"shop image"}
-							width={500}
-							height={500}
-						/>
-					</div>
+					<div>{image.component}</div>
 				</div>
 			</div>
 		</header>

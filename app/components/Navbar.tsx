@@ -26,8 +26,7 @@ type Props = {
 export type Navbar2Props = React.ComponentPropsWithoutRef<"section"> & Props;
 
 export const Navbar2 = (props: Navbar2Props) => {
-	const { logo, links, buttons } = {
-		...Navbar2Defaults,
+	const { links, buttons } = {
 		...props,
 	} as Props;
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -175,24 +174,4 @@ const NavItemDropdown = ({
 			)}
 		</div>
 	);
-};
-
-const Navbar2Defaults: Navbar2Props = {
-	logo: {
-		component: (
-			<Image src="/logo.svg" alt="Logo image" width={100} height={100} />
-		),
-		alt: "Logo image",
-	},
-	links: [
-		{ title: "About Us", url: "#about" },
-		{ title: "Products", url: "#products" },
-		{ title: "Review", url: "#reviews" },
-	],
-	buttons: [
-		{
-			title: "Contact",
-			size: "sm",
-		},
-	],
 };

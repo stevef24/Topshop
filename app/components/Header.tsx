@@ -3,6 +3,7 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ImageProps, ButtonProps } from "@relume_io/relume-ui";
 import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
 	heading: string;
@@ -28,16 +29,13 @@ export const Header1 = (props: Header1Props) => {
 						<p className="md:text-md">{description}</p>
 						<div className="mt-6 flex gap-x-4 md:mt-8 ">
 							{buttons.map((button, index) => (
-								<Button
+								<Link
 									key={`${button.title}-${index}`}
-									variant={button.variant}
-									size={button.size}
-									iconRight={button.iconRight}
-									iconLeft={button.iconLeft}
-									className="rounded-full bg-yellow-300 text-black"
+									className="rounded-full py-2 px-3 bg-yellow-300 text-black border border-black"
+									href={"/#products"}
 								>
 									{button.title}
-								</Button>
+								</Link>
 							))}
 						</div>
 					</div>

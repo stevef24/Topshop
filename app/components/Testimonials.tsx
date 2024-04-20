@@ -2,7 +2,6 @@
 
 import type { ImageProps } from "@relume_io/relume-ui";
 import { Star } from "@relume_io/relume-ui";
-import Image from "next/image";
 
 type Testimonial = {
 	testimonial: string;

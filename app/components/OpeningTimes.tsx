@@ -8,7 +8,7 @@ const OpeningTimes = () => {
 		{ day: "Thursday", open: "7:00 AM", close: "9:00 PM" },
 		{ day: "Friday", open: "7:00 AM", close: "9:00 PM" },
 		{ day: "Saturday", open: "7:00 AM", close: "9:00 PM" },
-		{ day: "Sunday", open: "10", close: "7:00 PM" },
+		{ day: "Sunday", open: "10:00 am", close: "7:00 PM" },
 	];
 
 	return (
@@ -19,13 +19,13 @@ const OpeningTimes = () => {
 
 			<div>
 				<table className="border border-black/40">
-					<thead className="border-b border-black/40 rounded-tl-2xl">
+					<thead className="border-b border-black/40 rounded-tl-2xl text-center">
 						<tr>
-							<th className="py-2 px-4  font-semibold text-left">Day</th>
-							<th className="py-2 px-4  font-semibold text-left">
+							<th className="py-2 px-2  font-semibold text-center">Day</th>
+							<th className="py-2 px-2  font-semibold text-center">
 								Opening Time
 							</th>
-							<th className="py-2 px-4  font-semibold text-left">
+							<th className="py-2 px-2 font-semibold text-center">
 								Closing Time
 							</th>
 						</tr>
@@ -36,9 +36,9 @@ const OpeningTimes = () => {
 								key={index}
 								className={index % 2 === 0 ? "bg-yellow-100" : "bg-yellow-200"}
 							>
-								<td className="py-2 px-4 ">{time.day}</td>
-								<td className="py-2 px-4 ">{time.open}</td>
-								<td className="py-2 px-4 ">{time.close}</td>
+								<td className="py-2 px-2 text-center">{time.day}</td>
+								<td className="py-2 px-2 text-center">{time.open}</td>
+								<td className="py-2 px-2 text-center">{time.close}</td>
 							</tr>
 						))}
 					</tbody>

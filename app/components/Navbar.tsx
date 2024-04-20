@@ -31,7 +31,7 @@ export const Navbar2 = (props: Navbar2Props) => {
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 	const genericHamburgerLine = `h-0.5 w-6 my-[3px] bg-black transition ease-in-out transform duration-300 lg:hidden`;
 	return (
-		<nav className="flex fixed  z-10 h-auto min-h-16 w-full items-center bg-white/5  backdrop-filter backdrop-blur-lg px-[5%] lg:min-h-18">
+		<nav className="flex fixed  z-10 h-auto min-h-16 w-full items-center bg-white/50  backdrop-filter backdrop-blur-lg px-[5%] lg:min-h-18">
 			<div className="mx-auto flex w-full justify-between ">
 				<div className="flex min-h-16 flex-shrink-0 items-center">
 					<Logo />

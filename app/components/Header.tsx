@@ -22,12 +22,12 @@ export const Header1 = (props: Header1Props) => {
 		<header className="px-[5%] py-32 md:py-24 lg:py-28">
 			<div className="container">
 				<div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
-					<div>
-						<h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">
+					<div className="flex flex-col max-md:justify-center md:items-start">
+						<h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl max-md:text-center">
 							{heading}
 						</h1>
-						<p className="md:text-md">{description}</p>
-						<div className="mt-6 flex gap-x-4 md:mt-8 ">
+						<p className="md:text-md max-md:text-center">{description}</p>
+						<div className="mt-6 flex gap-x-4 md:mt-8 max-md:justify-center">
 							{buttons.map((button, index) => (
 								<Link
 									key={`${button.title}-${index}`}

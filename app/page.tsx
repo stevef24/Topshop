@@ -6,10 +6,10 @@ import OpeningTimes from "./components/OpeningTimes";
 import { Testimonial17 } from "./components/Testimonials";
 import About from "./components/About";
 import { Footer7 } from "./components/Footer";
-import { Contact1 } from "./components/Contact";
 import { imagesList } from "./components/LogoSection";
 import Logo from "./components/Logo";
 import Products from "./components/Products";
+import Contact from "./components/Contact";
 
 export default function Home() {
 	return (
@@ -70,12 +70,7 @@ export default function Home() {
 				]}
 			/>
 			<About />
-			<Contact1
-				tagline={"Contact us today"}
-				heading={"Want us to add something to the store ? Contact us!"}
-				description={""}
-				button={{ title: "Submit" }}
-			/>
+			<Contact />
 			<Footer7
 				image={{
 					src: "/public/logo.svg",

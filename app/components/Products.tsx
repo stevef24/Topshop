@@ -48,7 +48,7 @@ const products = [
 
 export default function ProductCarousel() {
 	return (
-		<section className="py-12 bg-yellow-50">
+		<section id="products" className="py-12 bg-yellow-50">
 			<div className="container mx-auto px-4">
 				<h2 className="text-3xl font-bold text-center mb-8 text-yellow-800">
 					Our Current Offers

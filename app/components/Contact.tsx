@@ -23,14 +23,14 @@ export default function Contact() {
 	return (
 		<section
 			id="contact"
-			className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-t from-yellow-50 to-white"
+			className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-b from-white to-yellow-50"
 		>
 			<div className="container px-4 md:px-6 mx-auto max-w-3xl">
 				<div className="text-center mb-10">
-					<h2 className="text-3xl md:text-4xl font-bold tracking-tight text-yellow-800 mb-4">
+					<h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
 						Get in Touch
 					</h2>
-					<p className="text-xl text-yellow-600 max-w-2xl mx-auto">
+					<p className="text-lg text-gray-600 max-w-2xl mx-auto">
 						We'd love to hear from you! Have a suggestion or question? Drop us a
 						message below.
 					</p>
@@ -47,7 +47,7 @@ export default function Contact() {
 							id="name"
 							placeholder="Your name"
 							required
-							className="w-full border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500"
+							className="w-full"
 						/>
 					</div>
 					<div>
@@ -62,7 +62,7 @@ export default function Contact() {
 							type="email"
 							placeholder="Your email"
 							required
-							className="w-full border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500"
+							className="w-full"
 						/>
 					</div>
 					<div>
@@ -75,13 +75,13 @@ export default function Contact() {
 						<Textarea
 							id="message"
 							placeholder="What's on your mind?"
-							className="min-h-[120px] w-full border-yellow-300 focus:border-yellow-500 focus:ring-yellow-500"
+							className="min-h-[120px] w-full"
 							required
 						/>
 					</div>
 					<Button
 						type="submit"
-						className="w-full bg-yellow-500 text-white hover:bg-yellow-600 transition-colors duration-300"
+						className="w-full bg-yellow-500 text-black hover:bg-yellow-400"
 						disabled={isSubmitting}
 					>
 						{isSubmitting ? (

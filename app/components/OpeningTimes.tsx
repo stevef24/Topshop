@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 export default function OpeningTimes() {
 	const times = [
-		{ day: "Monday", hours: "9:00 AM - 9:00 PM" },
-		{ day: "Tuesday", hours: "9:00 AM - 9:00 PM" },
-		{ day: "Wednesday", hours: "9:00 AM - 9:00 PM" },
-		{ day: "Thursday", hours: "9:00 AM - 9:00 PM" },
-		{ day: "Friday", hours: "9:00 AM - 10:00 PM" },
-		{ day: "Saturday", hours: "8:00 AM - 10:00 PM" },
+		{ day: "Monday", hours: "8:00 AM - 9:00 PM" },
+		{ day: "Tuesday", hours: "8:00 AM - 9:00 PM" },
+		{ day: "Wednesday", hours: "8:00 AM - 9:00 PM" },
+		{ day: "Thursday", hours: "8:00 AM - 9:00 PM" },
+		{ day: "Friday", hours: "8:00 AM - 9:00 PM" },
+		{ day: "Saturday", hours: "9:00 AM - 9:00 PM" },
 		{ day: "Sunday", hours: "10:00 AM - 8:00 PM" },
 	];
 

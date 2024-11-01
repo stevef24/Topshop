@@ -46,8 +46,8 @@ export default function Header() {
 						asChild
 						className="bg-yellow-500 text-black hover:bg-yellow-400 inline-flex h-14 items-center justify-center rounded-md px-8 text-lg font-semibold shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 disabled:pointer-events-none disabled:opacity-50"
 					>
-						<Link href="#explore" className="flex items-center">
-							Explore Now
+						<Link href="#products" className="flex items-center">
+							See offers
 							<ArrowRight className="ml-2 h-5 w-5" />
 						</Link>
 					</Button>

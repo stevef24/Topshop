@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Store } from "lucide-react";
+import { Menu, Store, Facebook, Instagram } from "lucide-react";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -37,10 +37,19 @@ export default function Navbar() {
 	);
 
 	const navItems = [
-		{ name: "About Us", href: "#about" },
 		{ name: "Products", href: "#products" },
 		{ name: "Reviews", href: "#reviews" },
+		{ name: "About Us", href: "#about" },
 		{ name: "Contact", href: "#contact" },
+	];
+
+	const socialLinks = [
+		{ name: "Facebook", href: "https://facebook.com/topshop", Icon: Facebook },
+		{
+			name: "Instagram",
+			href: "https://instagram.com/topshop",
+			Icon: Instagram,
+		},
 	];
 
 	return (
@@ -71,6 +80,20 @@ export default function Navbar() {
 										{item.name}
 									</Link>
 								))}
+								<div className="flex gap-4 mt-4">
+									{socialLinks.map((link) => (
+										<Link
+											key={link.name}
+											href={link.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="text-white hover:text-yellow-400"
+										>
+											<link.Icon className="h-7 w-7" />
+											<span className="sr-only">{link.name}</span>
+										</Link>
+									))}
+								</div>
 							</nav>
 						</SheetContent>
 					</Sheet>
@@ -82,7 +105,7 @@ export default function Navbar() {
 						TOPSHOP
 					</Link>
 				</div>
-				<nav className="hidden gap-6 md:flex">
+				<nav className="hidden gap-6 md:flex items-center">
 					{navItems.slice(0, 3).map((item) => (
 						<Link
 							key={item.href}
@@ -94,7 +117,21 @@ export default function Navbar() {
 						</Link>
 					))}
 				</nav>
-				<div>
+				<div className="flex items-center gap-4">
+					<div className="hidden md:flex gap-2">
+						{socialLinks.map((link) => (
+							<Link
+								key={link.name}
+								href={link.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-white hover:text-yellow-400"
+							>
+								<link.Icon className="h-7 w-7" />
+								<span className="sr-only">{link.name}</span>
+							</Link>
+						))}
+					</div>
 					<Link href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>
 						<Button
 							className="bg-yellow-500 text-black hover:bg-yellow-400"

@@ -1,49 +1,59 @@
 import { Star } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const testimonials = [
 	{
-		name: "John Doe",
+		name: "Chloe Ingham",
 		rating: 5,
-		text: "Great local shop with friendly staff and a wide range of products!",
+		text: "Absolutely love this convenience store! The owners are lovely, friendly and helpful. The prices are great and they always have a great selection of stock.",
 	},
 	{
-		name: "Jane Smith",
-		rating: 4,
-		text: "Always find what I need here. Convenient location and good prices.",
+		name: "Tamy Burton",
+		rating: 5,
+		text: "Great experience at Top shop! Went to collect a parcel and was blown away by the friendly staff. They were efficient, welcoming, and even cracked a few jokes.",
 	},
 	{
-		name: "Mike Johnson",
+		name: "Szymon Kalarus",
 		rating: 5,
-		text: "The fresh produce section is amazing. Love shopping here!",
+		text: "My favourite shop. Owners are the most friendly people I know. Good selection of items, a pickup point for Amazon. Highly recommended over other shops.",
 	},
 ];
 
 export default function Testimonials() {
 	return (
-		<section className="bg-white py-12" id="reviews">
-			<div className="container mx-auto px-4">
-				<h2 className="mb-8 text-center text-3xl font-bold">
+		<section
+			className="bg-gradient-to-b from-white to-yellow-50 py-16 md:py-24"
+			id="reviews"
+		>
+			<div className="container mx-auto px-4 md:px-6">
+				<h2 className="mb-12 text-center text-3xl font-bold tracking-tight text-gray-900">
 					What Our Customers Say
 				</h2>
 				<div className="grid gap-8 md:grid-cols-3">
 					{testimonials.map((testimonial, index) => (
-						<div
+						<Card
 							key={index}
-							className="rounded-lg bg-yellow-50 p-6 shadow-md transition-transform hover:scale-105"
+							className="bg-white transition-shadow hover:shadow-md"
 						>
-							<div className="mb-4 flex">
-								{[...Array(testimonial.rating)].map((_, i) => (
-									<Star
-										key={i}
-										className="h-5 w-5 fill-yellow-500 text-yellow-500"
-									/>
-								))}
-							</div>
-							<p className="mb-4 text-gray-600">{testimonial.text}</p>
-							<div className="inline-block border-t border-gray-200 pt-2 text-sm font-semibold">
-								{testimonial.name}
-							</div>
-						</div>
+							<CardHeader className="pb-4">
+								<div className="flex items-center justify-between">
+									<CardTitle className="text-lg font-semibold text-gray-900">
+										{testimonial.name}
+									</CardTitle>
+									<div className="flex">
+										{[...Array(testimonial.rating)].map((_, i) => (
+											<Star
+												key={i}
+												className="h-4 w-4 fill-yellow-500 text-yellow-500"
+											/>
+										))}
+									</div>
+								</div>
+							</CardHeader>
+							<CardContent>
+								<p className="text-gray-600">{testimonial.text}</p>
+							</CardContent>
+						</Card>
 					))}
 				</div>
 			</div>

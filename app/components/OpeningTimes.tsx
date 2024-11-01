@@ -1,51 +1,43 @@
-import React from "react";
-
-const OpeningTimes = () => {
-	const openingTimes = [
-		{ day: "Monday", open: "7:00 AM", close: "9:00 PM" },
-		{ day: "Tuesday", open: "7:00 AM", close: "9:00 PM" },
-		{ day: "Wednesday", open: "7:00 AM", close: "9:00 PM" },
-		{ day: "Thursday", open: "7:00 AM", close: "9:00 PM" },
-		{ day: "Friday", open: "7:00 AM", close: "9:00 PM" },
-		{ day: "Saturday", open: "7:00 AM", close: "9:00 PM" },
-		{ day: "Sunday", open: "10:00 am", close: "7:00 PM" },
+/* eslint-disable react/no-unescaped-entities */
+export default function OpeningTimes() {
+	const times = [
+		{ day: "Monday", hours: "9:00 AM - 9:00 PM" },
+		{ day: "Tuesday", hours: "9:00 AM - 9:00 PM" },
+		{ day: "Wednesday", hours: "9:00 AM - 9:00 PM" },
+		{ day: "Thursday", hours: "9:00 AM - 9:00 PM" },
+		{ day: "Friday", hours: "9:00 AM - 10:00 PM" },
+		{ day: "Saturday", hours: "8:00 AM - 10:00 PM" },
+		{ day: "Sunday", hours: "10:00 AM - 8:00 PM" },
 	];
 
 	return (
-		<div className="bg-yellow-400 justify-center flex flex-col md:flex-row items-center gap-20 py-10 w-full ">
-			<div>
-				<h2 className="text-6xl font-bold">Opening Time</h2>
+		<section className="bg-white py-12">
+			<div className="container mx-auto px-4">
+				<h2 className="mb-8 text-center text-3xl font-bold">Opening Times</h2>
+				<h4 className="text-center text-gray-600 mb-6 max-w-2xl mx-auto">
+					We're open every day of the week to serve you better. Check our hours
+					below.
+				</h4>
+				<div className="mx-auto max-w-md overflow-hidden rounded-lg border border-gray-200 shadow-md">
+					<table className="w-full border-collapse bg-white text-left text-sm text-gray-500">
+						<tbody>
+							{times.map((time, index) => (
+								<tr
+									key={time.day}
+									className={
+										index !== times.length - 1 ? "border-b border-gray-200" : ""
+									}
+								>
+									<td className="px-6 py-4 font-semibold text-gray-900">
+										{time.day}
+									</td>
+									<td className="px-6 py-4">{time.hours}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
+				</div>
 			</div>
-
-			<div>
-				<table className="border border-black/40">
-					<thead className="border-b border-black/40 rounded-tl-2xl text-center">
-						<tr>
-							<th className="py-2 px-2  font-semibold text-center">Day</th>
-							<th className="py-2 px-2  font-semibold text-center">
-								Opening Time
-							</th>
-							<th className="py-2 px-2 font-semibold text-center">
-								Closing Time
-							</th>
-						</tr>
-					</thead>
-					<tbody>
-						{openingTimes.map((time, index) => (
-							<tr
-								key={index}
-								className={index % 2 === 0 ? "bg-yellow-100" : "bg-yellow-200"}
-							>
-								<td className="py-2 px-2 text-center">{time.day}</td>
-								<td className="py-2 px-2 text-center">{time.open}</td>
-								<td className="py-2 px-2 text-center">{time.close}</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-			</div>
-		</div>
+		</section>
 	);
-};
-
-export default OpeningTimes;
+}

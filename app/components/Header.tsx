@@ -1,55 +1,58 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { Button } from "@relume_io/relume-ui";
-import type { ImageProps, ButtonProps } from "@relume_io/relume-ui";
-import Image from "next/image";
+import { useRef, useEffect } from "react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-type Props = {
-	heading: string;
-	description: string;
-	buttons: ButtonProps[];
-	image: ImageProps;
-};
+export default function Header() {
+	const videoRef = useRef<HTMLVideoElement>(null);
 
-export type Header1Props = React.ComponentPropsWithoutRef<"section"> & Props;
+	useEffect(() => {
+		if (videoRef.current) {
+			videoRef.current.playbackRate = 0.75;
+		}
+	}, []);
 
-export const Header1 = (props: Header1Props) => {
-	const { heading, description, buttons, image } = {
-		...props,
-	} as Props;
 	return (
-		<header className="px-[5%] py-32 md:py-24 lg:py-28">
-			<div className="container">
-				<div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
-					<div className="flex flex-col max-md:justify-center md:items-start">
-						<h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl max-md:text-center">
-							{heading}
-						</h1>
-						<p className="md:text-md max-md:text-center">{description}</p>
-						<div className="mt-6 flex gap-x-4 md:mt-8 max-md:justify-center">
-							{buttons.map((button, index) => (
-								<Link
-									key={`${button.title}-${index}`}
-									className="rounded-full py-2 px-3 bg-yellow-300 text-black border border-black"
-									href={"/#products"}
-								>
-									{button.title}
-								</Link>
-							))}
-						</div>
-					</div>
-					<div>
-						<Image
-							src={image.src}
-							alt={"open"}
-							width={500}
-							height={500}
-							className="rounded-3xl"
-						/>
-					</div>
+		<section className="relative h-screen overflow-hidden">
+			<video
+				ref={videoRef}
+				autoPlay
+				loop
+				muted
+				playsInline
+				className="absolute inset-0 w-full h-full object-cover"
+			>
+				<source src="/videos/shop.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video>
+
+			<div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black/80"></div>
+
+			<div className="relative z-10 container mx-auto px-4 py-12 md:px-6 md:py-24 h-full flex items-center">
+				<div className="flex flex-col items-center text-center max-w-[48rem] lg:items-start lg:text-left">
+					<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-white mb-6">
+						Welcome to{" "}
+						<span className="text-yellow-400">Top-Shop Convenience</span>
+					</h1>
+					<p className="max-w-[600px] text-gray-200 md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed mb-8">
+						Discover a wide range of products and enjoy exceptional customer
+						service. We're dedicated to providing convenience and quality to our
+						valued customers.
+					</p>
+					<Button
+						asChild
+						className="bg-yellow-500 text-black hover:bg-yellow-400 inline-flex h-14 items-center justify-center rounded-md px-8 text-lg font-semibold shadow-lg transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-yellow-400 disabled:pointer-events-none disabled:opacity-50"
+					>
+						<Link href="#explore" className="flex items-center">
+							Explore Now
+							<ArrowRight className="ml-2 h-5 w-5" />
+						</Link>
+					</Button>
 				</div>
 			</div>
-		</header>
+		</section>
 	);
-};
+}

@@ -57,7 +57,7 @@ export default function Header() {
 							href="https://www.facebook.com/profile.php?id=100095278175115&mibextid=LQQJ4d&rdid=za6BjsBTsRaWJYZ1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FutLSxhyzeL9aMV1k%2F%3Fmibextid%3DLQQJ4d"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-blue-500 hover:text-blue-600 transition-colors duration-300"
+							className="text-yellow-500 hover:text-yellow-600 transition-colors duration-300"
 							aria-label="Visit our Facebook page"
 						>
 							<svg
@@ -73,7 +73,7 @@ export default function Header() {
 							href="https://www.instagram.com/topshopconvenience/profilecard/?igsh=cWtwaGZyYnc5Z2Zm"
 							target="_blank"
 							rel="noopener noreferrer"
-							className="text-pink-500 hover:text-pink-600 transition-colors duration-300"
+							className="text-yellow-500 hover:text-yellow-600 transition-colors duration-300"
 							aria-label="Visit our Instagram page"
 						>
 							<svg

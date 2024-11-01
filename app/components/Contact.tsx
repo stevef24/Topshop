@@ -107,10 +107,10 @@ export default function Contact() {
 					</div>
 					<div className="flex-1">
 						<h3 className="text-2xl font-semibold mb-4">Find Us Here</h3>
-						<div className="aspect-w-16 aspect-h-9">
+						<div className="flex justify-center aspect-h-9">
 							<iframe
 								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2401.718773430126!2d-1.1848224031260044!3d52.98945920047691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4879c1c9044fd621%3A0x388100e929e7f0db!2sTop-Shop%20Convenience!5e0!3m2!1sen!2suk!4v1730495261796!5m2!1sen!2suk"
-								width="600"
+								width="450"
 								height="450"
 								style={{ border: 0 }}
 								allowFullScreen={true}

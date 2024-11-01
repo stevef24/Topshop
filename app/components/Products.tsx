@@ -12,7 +12,6 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
 
-// Sample product data
 const products = [
 	{
 		id: 1,

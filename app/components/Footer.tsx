@@ -16,7 +16,7 @@ export function Footer() {
 				<div className="flex flex-col items-center justify-between gap-4 md:flex-row">
 					<div className="flex items-center gap-2">
 						<Store className="h-6 w-6 text-yellow-400" />
-						<span className="text-lg font-semibold">Topshop Convenience</span>
+						<span className="text-lg font-semibold">TOP-SHOP Convenience</span>
 					</div>
 					<nav className="flex flex-wrap justify-center gap-4">
 						{footerLinks.map((link) => (
@@ -30,7 +30,7 @@ export function Footer() {
 						))}
 					</nav>
 					<p className="text-sm text-gray-400">
-						© 2024 Topshop Convenience. Created by Stav.
+						© 2024 TOP-SHOP Convenience. Created by Stav.
 					</p>
 				</div>
 			</div>

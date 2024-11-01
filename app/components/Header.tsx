@@ -38,9 +38,10 @@ export default function Header() {
 						<span className="text-yellow-400">Top-Shop Convenience</span>
 					</h1>
 					<p className="max-w-[600px] text-gray-200 md:text-xl/relaxed lg:text-xl/relaxed xl:text-2xl/relaxed mb-8">
-						Discover a wide range of products and enjoy exceptional customer
-						service. We're dedicated to providing convenience and quality to our
-						valued customers.
+						Discover a wide selection of products with the warm, personal touch
+						of a family-owned business. We're dedicated to offering our valued
+						customers both convenience and quality, alongside exceptional,
+						family-oriented service.
 					</p>
 					<Button
 						asChild

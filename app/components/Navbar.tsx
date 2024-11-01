@@ -1,14 +1,15 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Store, Facebook, Instagram } from "lucide-react";
+import { Menu, Store } from "lucide-react";
 
 export default function Navbar() {
 	const [isOpen, setIsOpen] = useState(false);
+	const [scrollProgress, setScrollProgress] = useState(0);
 	const router = useRouter();
 
 	const closeSheet = () => setIsOpen(false);
@@ -18,10 +19,8 @@ export default function Navbar() {
 			e.preventDefault();
 			closeSheet();
 
-			// Use Next.js router to update the URL without a page reload
 			router.push(href);
 
-			// Smooth scroll to the target element
 			const targetId = href.replace(/.*#/, "");
 			setTimeout(() => {
 				const elem = document.getElementById(targetId);
@@ -36,6 +35,20 @@ export default function Navbar() {
 		[router]
 	);
 
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollY = window.scrollY;
+			const windowHeight = window.innerHeight;
+			const documentHeight = document.documentElement.scrollHeight;
+			const maxScroll = documentHeight - windowHeight;
+			const progress = Math.min(scrollY / (maxScroll * 0.2), 1);
+			setScrollProgress(progress);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
+
 	const navItems = [
 		{ name: "Products", href: "#products" },
 		{ name: "Reviews", href: "#reviews" },
@@ -43,17 +56,16 @@ export default function Navbar() {
 		{ name: "Contact", href: "#contact" },
 	];
 
-	const socialLinks = [
-		{ name: "Facebook", href: "https://facebook.com/topshop", Icon: Facebook },
-		{
-			name: "Instagram",
-			href: "https://instagram.com/topshop",
-			Icon: Instagram,
-		},
-	];
+	const bgOpacity = scrollProgress.toFixed(2);
 
 	return (
-		<header className="bg-black text-white fixed top-0 left-0 right-0 z-50">
+		<header
+			className="fixed top-0 left-0 right-0 z-50 transition-colors duration-300"
+			style={{
+				backgroundColor: `rgba(0, 0, 0, ${bgOpacity})`,
+				boxShadow: scrollProgress > 0 ? "0 2px 4px rgba(0,0,0,0.1)" : "none",
+			}}
+		>
 			<div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
 				<div className="flex items-center">
 					<Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -80,20 +92,6 @@ export default function Navbar() {
 										{item.name}
 									</Link>
 								))}
-								<div className="flex gap-4 mt-4">
-									{socialLinks.map((link) => (
-										<Link
-											key={link.name}
-											href={link.href}
-											target="_blank"
-											rel="noopener noreferrer"
-											className="text-white hover:text-yellow-400"
-										>
-											<link.Icon className="h-7 w-7" />
-											<span className="sr-only">{link.name}</span>
-										</Link>
-									))}
-								</div>
 							</nav>
 						</SheetContent>
 					</Sheet>
@@ -102,14 +100,14 @@ export default function Navbar() {
 						href="#"
 					>
 						<Store className="h-6 w-6" />
-						TOPSHOP
+						TOP-SHOP
 					</Link>
 				</div>
 				<nav className="hidden gap-6 md:flex items-center">
 					{navItems.slice(0, 3).map((item) => (
 						<Link
 							key={item.href}
-							className="text-sm font-medium hover:text-yellow-400 hover:underline underline-offset-4"
+							className="text-sm font-medium text-white hover:text-yellow-400 hover:underline underline-offset-4"
 							href={item.href}
 							onClick={(e) => handleLinkClick(e, item.href)}
 						>
@@ -117,21 +115,7 @@ export default function Navbar() {
 						</Link>
 					))}
 				</nav>
-				<div className="flex items-center gap-4">
-					<div className="hidden md:flex gap-2">
-						{socialLinks.map((link) => (
-							<Link
-								key={link.name}
-								href={link.href}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="text-white hover:text-yellow-400"
-							>
-								<link.Icon className="h-7 w-7" />
-								<span className="sr-only">{link.name}</span>
-							</Link>
-						))}
-					</div>
+				<div className="flex items-center">
 					<Link href="#contact" onClick={(e) => handleLinkClick(e, "#contact")}>
 						<Button
 							className="bg-yellow-500 text-black hover:bg-yellow-400"

@@ -9,6 +9,7 @@ export const imagesList = [
 	{ src: "/logo-amazon.svg", alt: "amazon logo" },
 	{ src: "/ups-logo-1.svg", alt: "royal mail logo" },
 	{ src: "/royal-mail-2.svg", alt: "ups logo" },
+	{ src: "/inpost.png", alt: "inpost logo" },
 ];
 
 export function DeliveryPartners() {
